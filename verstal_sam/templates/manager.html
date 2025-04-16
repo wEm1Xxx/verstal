@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <div class="col bg-header-manager">Панель Менеджера</div>
+<div class="container mt-5">
+    <div class="row text-center">
+        <h2>Список пользователей</h2>
+    </div>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Логин</th>
+                <th scope="col">Пароль</th>
+                <th scope="col">Роль</th>
+                <th scope="col">Изменить</th>
+                <th scope="col">Удалить</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in user %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td><a href="./work.html">{{user.login}}</a></td>
+                <td>{{user.role_id}}</td>
+                <td>
+                    <a href="/client/{{client.id}}" class="btn btn-success">Изменить</a>
+                </td>
+                <td>
+                    <a href="/client/delete/{{client.id}}" class="btn btn-danger">Удалить</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row">
+        <form class="row g-3" action="" method="POST">
+            <div class="col-3">
+                <div id="secondaryHelp" class="form-text">Введите Логин нового клиента</div>
+                <input type="text" class="form-control border-login" id="exampleInputSecondary" name="login" aria-describedby="secondaryHelp" required>
+            </div>
+            <div class="col-3">
+                <div id="firstHelp" class="form-text">Введите Пароль нового клиента</div>
+                <input type="text" class="form-control border-login" id="exampleInputFirst" name="password" aria-describedby="firstHelp" required>
+            </div>
+            <div class="col-3">
+                <div id="phoneHelp" class="form-text">Введите Роль нового клиента</div>
+                <input type="text" class="form-control border-login" id="exampleInputPhone" name="role_id" aria-describedby="phoneHelp" required>
+            </div>
+            <div class="col-3 d-flex align-items-end">
+                <button type="submit" class="btn button-manager" style="width: 100%;">Добавить пользователей</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+{% endblock %}

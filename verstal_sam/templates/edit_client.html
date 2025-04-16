@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="col bg-header-manager ">Изменить клиента</div>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <h2>Данные клиента</h2>
+        </div>
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Логин</th>
+                    <th scope="col">Роль</th>
+                    <th scope="col">Отменить</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{user.login}}</td>
+                    <td>{{user.role_id}}</td>
+                    <td>
+                        <a href="/manager" class="btn btn-danger">Отменить</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+
+            <form method="post" action="/client/{{client.id}}" class="row d-flex justify-content-center g-3">
+                <div class="row">
+                    <div class="col-3">
+                        <div id="secondaryHelp" class="form-text">Введите Логин клиента</div>
+                        <input type="text" value="{{user.login}}" name="login" class="form-control border-login" id="exampleInputsecondary"
+                            aria-describedby="lsecondaryHelp" required>
+
+                    </div>
+                    <div class="col-3">
+                        <div id="firstHelp" class="form-text">Введите Роль клиента</div>
+                        <input type="text" value="{{user.role_id}}" name="role_id" class="form-control border-login" id="exampleInputfirst"
+                            aria-describedby="firstHelp" required>
+
+                    </div>
+                    <div class="col-3 d-flex align-items-end">
+
+                        <button type="submit"  class="btn button-manager" style="width: 100%;">Изменить данные
+                            клиента</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+{% endblock %}

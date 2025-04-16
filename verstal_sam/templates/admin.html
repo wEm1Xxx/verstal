@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="col bg-header-admin ">Панель Администратора</div>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center align-items-center" style="gap: 60px">
+            <a href="/admin/users">
+                <div class="col">
+                    <div class="img">
+                        <img src="/static/img/clients.svg">
+                        <h1>Клиенты</h1>
+                    </div>
+
+                </div>
+            </a>
+            <a href="/admin/orders">
+                <div class="col">
+                    <div class="img">
+                        <img src="/static/img/Order.svg">
+                        <h1>Заказы</h1>
+                    </div>
+                </div>
+            </a>
+            <a href="/admin/warehouse">
+                <div class="col">
+                    <div class="img">
+                        <img src="/static/img/Warehouse.svg">
+                        <div>
+                        <h1>Складской учёт</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+</body>
+
+{% endblock %}
